@@ -6,7 +6,9 @@ namespace Dima.Api.Data
 {
     public class ContextApp : DbContext
     {
-
+        public ContextApp(DbContextOptions<ContextApp> options) : base(options)
+        {
+        }
 
         public DbSet<Category> Categories { get; set; } = null!;
         public DbSet<Transaction> Transactions { get; set; } = null!;

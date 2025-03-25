@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 //
-var connectionString = builder.Configuration.GetConnectionString("Banco");
+var connectionString = builder.Configuration.GetConnectionString("Banco")?? string.Empty;
 builder.Services.AddDbContext<ContextApp>(op => op.UseSqlServer(connectionString));
 //
 builder.Services.AddEndpointsApiExplorer();
